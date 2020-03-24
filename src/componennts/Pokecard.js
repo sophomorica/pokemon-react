@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
 import styled from 'styled-components'
-
+import pokeball_1 from '../images/pokeball_1.png'
 
 
 const Pokecard = ({singleMon}) =>(
@@ -10,7 +10,9 @@ const Pokecard = ({singleMon}) =>(
       <PokeCard>
         <div className="card__face card__face--front">
           <figure>
+            <Image src={pokeball_1}/>
             <figcaption>
+              {/* {console.log(singleMon)} */}
               {singleMon.name}
             </figcaption>
           </figure>
@@ -41,7 +43,13 @@ transition: all 0.25s ease;
 transform-style: preserve-3d;
 cursor: pointer;
 position: relative;
-border-radius: 15%;
+border-radius: 6px;
 background-color: none;
 box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.37);
+`
+const Image = styled.img`
+  width: 200px;
+  height: 200px;
+  padding: 4px;
+
 `
