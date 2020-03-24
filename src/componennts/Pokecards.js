@@ -10,7 +10,7 @@ class Pokecards extends Component {
   constructor(props){
     super(props)
     this.state={
-      pokecards: [],
+      allFetchedPokemon: [],
       error: false,
     }
   }
@@ -18,10 +18,13 @@ class Pokecards extends Component {
     console.log("you did it")
   }
   componentDidMount() {
+
     pokemon.forEach(p =>{
       axios.get(p.url)
       .then((res)=>{
-        console.log(res.data)
+        this.setState({
+          allFetchedPokemon: res.data
+        })
       })
       .catch((error) =>{
         this.setState({
@@ -32,7 +35,7 @@ class Pokecards extends Component {
   }
   renderItems(){
     if(!this.state.error){
-      return this.state.pokecards.map((p)=>(
+      return this.state.pokemon.map((p)=>(
         <Pokecard key={p.url} singleMon={p}  />
       ))
     } else{
@@ -46,7 +49,7 @@ class Pokecards extends Component {
         <Row>
 
           {/* {this.renderItems()} */}
-               {/* {console.log(pokecards)} */}
+          {console.log(this.state.allFetchedPokemon)}
         </Row>
       </Container>
     )
