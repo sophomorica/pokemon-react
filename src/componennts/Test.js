@@ -20,7 +20,7 @@ const Test = (props) =>{
         {console.log(cards)}
         {cards.map(p=>{
           return (
-            <h1 key={p.id}>{p.moves.move[0].name}</h1>
+            <h1 key={p.id}>{p.moves[1].move.name}</h1>
           )
         })}
       </div>
