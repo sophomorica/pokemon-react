@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
-import {Card, Header, Container} from 'react-bootstrap'
+import React from 'react'
+import {Card} from 'react-bootstrap'
 
 
-const Pokecard = ({allPokemon}) =>{
+const Pokecard = ({singleMon}) =>(
 
   <Card>
-    
+    <Card.Title>{singleMon.name}</Card.Title>
   </Card>
-  
-}
+)
+
+
+
 
 export default Pokecard

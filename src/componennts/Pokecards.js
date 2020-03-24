@@ -10,20 +10,14 @@ class Pokecards extends Component {
     super(props)
     this.state={
       pokecards: [...pokemon],
-      error: true,
+      error: false,
     }
   }
   renderItems(){
     if(!this.state.error){
-      return(
-        <Container>
-  
-        {this.state.pokecards.map(p=>{
-          
-           <Pokecard key={p.url} singlMon={p}/>
-        })}
-        </Container>
-      )
+      return this.state.pokecards.map((p)=>(
+        <Pokecard key={p.url} singleMon={p} />
+      ))
     } else{
       return <Error />
     }

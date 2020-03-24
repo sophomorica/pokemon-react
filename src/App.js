@@ -1,6 +1,5 @@
 import React from 'react';
 import Pokecards from './componennts/Pokecards'
-import
 
 function App() {
   return (
