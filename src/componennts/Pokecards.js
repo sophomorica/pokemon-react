@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Pokecard from './Pokecard'
 import pokemon from '../data/pokemon.js'
 import Error from './Error'
+import styled from 'styled-components'
+
 import {Container, Row} from 'react-bootstrap'
 import axios from 'axios'
 
@@ -66,8 +68,8 @@ const Pokecards = () => {
   
    
     return(
-      <Container >
-        <Row>
+      <Container fluid >
+        <Row style={{display:"flex", justifyContent:"center"}}>
           {renderItems()}
         </Row>
       </Container>
@@ -76,3 +78,4 @@ const Pokecards = () => {
 }
 
 export default Pokecards
+
