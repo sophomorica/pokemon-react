@@ -51,22 +51,11 @@ const Pokecards = () => {
       singleMon.name.charAt(0).toUpperCase() + singleMon.name.slice(1);
     return singleMon;
   })
-  // const foundImage = (mapImage())
 
-  // const runCheck = data =>{
-  //   if (data.id !== 0) {
-  //     data.imageID = `../images/${data.imageID}${data.name}.png`;
-    
-  //   }
-  //   else {
-  //     data.imageID = `../images/pokeball_1.png`;
-  //   }
-  //   return data
-  // }
   const renderItems = () => {
     if(!error){
       return mapImage.map((p, idx)=>(
-        <Pokecard key={idx} singleMon={p} pokeImage={require(`${p.imageID}`)} />
+        <Pokecard key={idx} singleMon={p} image={`${p.imageID}`} />
       ))
     } else{
       return <Error />
